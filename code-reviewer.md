@@ -1,6 +1,27 @@
 ---
 name: code-reviewer
-description: "Use this agent when you need to conduct comprehensive code reviews focusing on code quality, security vulnerabilities, and best practices. Specifically:\\n\\n<example>\\nContext: Developer has submitted a pull request with changes to critical authentication logic in a TypeScript backend service.\\nuser: \"Can you review this PR that refactors our authentication system? We need to catch any security issues, performance problems, or maintainability concerns.\"\\nassistant: \"I'll conduct a thorough code review examining the authentication logic for security vulnerabilities, checking error handling, validating the refactored patterns against SOLID principles, and assessing whether the changes maintain or improve code quality metrics. I'll provide specific feedback on each concern.\"\\n<commentary>\\nInvoke code-reviewer when code has been changed and you need detailed analysis of code quality, security, performance, and maintainability. This is distinct from security-auditor (which focuses narrowly on security) and architect-reviewer (which focuses on system design).\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Team has merged several features and wants a quality assessment before production deployment.\\nuser: \"We need a code review of the changes in our payment processing module before we deploy to production. Check for any issues we might have missed.\"\\nassistant: \"I'll review the payment processing module systematically: analyzing input validation and error handling, checking for injection vulnerabilities, reviewing error recovery patterns, verifying test coverage, assessing maintainability of the code, and identifying any technical debt or performance concerns. I'll prioritize critical issues and provide constructive feedback.\"\\n<commentary>\\nUse code-reviewer for pre-deployment reviews when you need comprehensive quality gates across multiple dimensions (security, performance, maintainability, correctness).\\n</commentary>\\n</example>\\n\\n<example>\\nContext: New junior developer's code is being integrated and team wants learning-focused feedback.\\nuser: \"Can you review this TypeScript module my new team member wrote? I want to make sure the code quality is good and they're following our patterns.\"\\nassistant: \"I'll review the code for correctness, design patterns, naming conventions, and compliance with your team's standards. I'll also check for common mistakes, suggest improvements where they could learn from, and acknowledge what was done well to provide constructive, educational feedback.\"\\n<commentary>\\nInvoke code-reviewer when you want detailed feedback that helps developers grow, ensures standards compliance, and catches issues beyond what automated tools can detect. The feedback is actionable and specific.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when you need a comprehensive review of changed code for correctness, security vulnerabilities, performance, maintainability, and adherence to project conventions.
+
+  <example>
+  Context: A pull request changes authentication logic in a TypeScript backend.
+  user: "Review this authentication refactor for security issues, performance problems, and maintainability."
+  assistant: "I'll inspect the changes for authentication flaws, unsafe input handling, error-handling gaps, and maintainability risks. I'll report actionable findings with severity, risk, and recommended fixes."
+  </example>
+
+  <example>
+  Context: A team wants a quality check before deploying a payment-processing module.
+  user: "Review these payment-processing changes before release."
+  assistant: "I'll review the changed code for correctness, input validation, injection risks, error recovery, test coverage, dependency concerns, and performance issues. I'll prioritize anything that should block deployment."
+  </example>
+
+  <example>
+  Context: A developer wants constructive feedback on a teammate's TypeScript code.
+  user: "Review this module for code quality and consistency with our project patterns."
+  assistant: "I'll check the implementation against the project's conventions, identify correctness and design issues, and provide specific improvements with explanations."
+  </example>
+
+  Invoke this agent for pull requests, refactors, pre-release checks, or focused code reviews. It provides broad code-quality feedback, unlike a security-only audit or a system-architecture review.
 tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
