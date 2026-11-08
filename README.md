@@ -38,3 +38,7 @@ The agent structures findings by severity:
 Each finding should explain the risk and give a concrete fix.
 
 Read [`code-reviewer.md`](./code-reviewer.md) for the complete agent instructions.
+
+## Skill entry point
+
+Added `SKILL.md` as a discoverable skill entry point. The detailed Claude Code agent configuration remains in `code-reviewer.md`.
